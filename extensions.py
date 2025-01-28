@@ -31,7 +31,7 @@ class CurrencyConverter:
         try:
             amount = float(amount)
         except ValueError:
-            raise APIException(f'Не удалось обработать сумму: {amount}.\nВводите цифры!\nПосмотрите правиле здесь:/help')
+            raise APIException(f'Не удалось обработать сумму: {amount}.\nВводите цифры!\nПосмотрите правила здесь:/help')
 
         r = requests.get(f'https://v6.exchangerate-api.com/v6/232f2f7e8d02b9e14cf5aee5/pair/{keys[quote]}/{keys[base]}')
         data = json.loads(r.content)
